@@ -3,10 +3,11 @@
     <div>
       <div>
       <p class="text-center" ng-if="state.factoryEmpty">Press the  button  to create a new robot!</p>
-      <p ng-if="!state.factoryEmpty">Robot Name: {{robotName}}</p>
+      <p ng-if="!state.factoryEmpty">Name: {{robot.name}}</p>
+      <p ng-if="!state.factoryEmpty">ID: {{robot.id}}</p>
       </div>
       <div>
-       <canvas class="arcade-frame" id="main" height="250px" width="300px" ><canvas> 
+       <canvas class="arcade-frame" id="main" height="250px" width="300px" ng-click=""><canvas> 
        </div>
        
        <div class="mar-b20">

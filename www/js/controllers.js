@@ -7,8 +7,71 @@ angular.module('starter.controllers', [])
 .controller('FactoryCtrl', function($scope, Robots) {
     
 	$scope.state = {
-		factoryEmpty: true
+		factoryEmpty: true,
+		robotSaved: true
 	};
+  
+	$scope.createRobot = function() {
+		
+		var canvas = document.getElementById('main'),
+		context = canvas.getContext('2d');
+		
+		var x = 150;
+		var y = 100;
+		
+		context.fillStyle= randomColor();
+		
+		// enemy body
+		context.fillRect(x, y, 20, 20);
+		
+		// enemy arms
+		context.fillRect(x+20, y+2, 6, 4);
+		context.fillRect(x-6, y+2, 6, 4);
+		context.fillRect(x+22, y+4, 4, 10);
+		context.fillRect(x-6, y+4, 4, 10);
+	
+		// enemy legs
+		context.fillRect(x+2, y+25, 4, 15);
+		context.fillRect(x+15, y+25, 4, 15);
+		context.fillRect(x+2, y+2, 14, 4)
+	
+		// enemy eye - use for easier modes
+		context.clearRect(x+2, y+2, 14, 4);
+		context.fillStyle = 'rgb(255, 0, 0)';
+		context.fillRect(x+6, y+2, 6, 4);
+		
+
+		function randomColor() {
+					for (var n = 0; n < 1; n ++) {
+						var letters = '0123456789ABCDEF'.split('');
+						var color = '#';
+							for (var i = 0; i < 6; i++ ) {
+								color += letters[Math.round(Math.random() * 15)];
+							}
+				} 
+			
+			$scope.robotName = color;
+			$scope.robotId = color + 'ASP';
+			return color;
+		}
+		$scope.state.factoryEmpty = false;
+
+		return $scope.robot = ({
+			name: $scope.robotName,
+			id: $scope.robotId
+		})
+	};
+
+	$scope.destroyRobot = function() {
+		$scope.state.factoryEmpty = true;
+	}
+	
+	$scope.saveRobot = function(robot) {
+		console.log($scope.robotName);
+		Robots.add($scope.robot);
+		$scope.state.robotSaved = true;
+		console.log($scope.robot);
+	}
 	
 	// star field
 	/* Randomly generated star field by Chuck Leone
@@ -98,68 +161,6 @@ angular.module('starter.controllers', [])
 	
 	myStars();
   // end star field
-  
-	$scope.createRobot = function() {
-		$scope.robot = '';
-		$scope.robotName = '';
-		var canvas = document.getElementById('main'),
-		context = canvas.getContext('2d');
-		
-		var x = 150;
-		var y = 100;
-		
-		context.fillStyle= randomColor();
-		
-		// enemy body
-		context.fillRect(x, y, 20, 20);
-		
-		// enemy arms
-		context.fillRect(x+20, y+2, 6, 4);
-		context.fillRect(x-6, y+2, 6, 4);
-		context.fillRect(x+22, y+4, 4, 10);
-		context.fillRect(x-6, y+4, 4, 10);
-	
-		// enemy legs
-		context.fillRect(x+2, y+25, 4, 15);
-		context.fillRect(x+15, y+25, 4, 15);
-		context.fillRect(x+2, y+2, 14, 4)
-	
-		// enemy eye - use for easier modes
-		context.clearRect(x+2, y+2, 14, 4);
-		context.fillStyle = 'rgb(255, 0, 0)';
-		context.fillRect(x+6, y+2, 6, 4);
-		
-
-		function randomColor() {
-					for (var n = 0; n < 1; n ++) {
-						var letters = '0123456789ABCDEF'.split('');
-						var color = '#';
-							for (var i = 0; i < 6; i++ ) {
-								color += letters[Math.round(Math.random() * 15)];
-							}
-				} 
-			
-			$scope.robotName = color;
-			
-			return color;
-		}
-		$scope.state.factoryEmpty = false;
-		console.log("robot name is " + $scope.robotName);
-		return $scope.robotName;
-		return $scope.robot = [{
-			name: $scope.robotName,
-			id: $scope.robotId
-		}]
-	};
-
-	$scope.destroyRobot = function() {
-		$scope.state.factoryEmpty = true;
-	}
-	
-	$scope.saveRobot = function() {
-		console.log($scope.robot);
-		Robots.add($scope.robot);
-	}
 })
 
 .controller('WarehouseCtrl', function($scope, Robots) {

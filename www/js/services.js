@@ -1,22 +1,17 @@
 angular.module('starter.services', [])
 
 .factory('Robots', function(){
-  var robots = [{
-    id: 0,
-    name: 'R2D2',
-  },{
-    id: 1,
-    name: 'THX1138'
-  }];
+  var robots = [];
+  
   return {
     all: function() {
       return robots;
     },
-    remove: function(robots) {
-      robots.splice(robots.indexOf(robots), 1);
+    remove: function(robot) {
+      robots.splice(robots.indexOf(robot), 1);
     },
-    add: function(robots) {
-      robots.splice(robots.indexOf(robots), 0)
+    add: function(robot) {
+      robots.push(robots.indexOf(robot), 0);
     },
     get: function(robotId) {
       for (var i = 0; i < robots.length; i++) {
