@@ -1,0 +1,16 @@
+<ion-view view-title="Warehouse">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="robot in robots" type="item-text-wrap" href="#/tab/robots/{{robot.id}}">
+        <img ng-src="{{robot.image}}">
+        <h2>{{robot.name}}</h2>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(robot)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

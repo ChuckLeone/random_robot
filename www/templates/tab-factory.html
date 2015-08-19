@@ -1,0 +1,20 @@
+<ion-view view-title="Robot Factory">
+  <ion-content class="padding">
+    <div>
+      <div>
+      <p class="text-center" ng-if="state.factoryEmpty">Press the  button  to create a new robot!</p>
+      <p ng-if="!state.factoryEmpty">Robot Name: {{robotName}}</p>
+      </div>
+      <div>
+       <canvas class="arcade-frame" id="main" height="250px" width="300px" ><canvas> 
+       </div>
+       
+       <div class="mar-b20">
+         <button class="button button-small button-balanced btn" data-ng-click="createRobot()" ng-show="state.factoryEmpty">Create Robot</button>
+         <button class="button button-small button-assertive btn" data-ng-click="destroyRobot(robotName)" ng-show="!state.factoryEmpty">Destroy Robot</button>
+        <button class="button button-small button-balanced btn" data-ng-click="saveRobot(robotName)" ng-show="!state.factoryEmpty">Save Robot</button>
+        </div>
+    </div>
+    
+  </ion-content>
+</ion-view>

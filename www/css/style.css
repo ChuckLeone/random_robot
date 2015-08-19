@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'Press Start 2P';
+	src: url('/fonts/PressStart2P-Regular.ttf');
+}
+
+body {
+	background-color: black;
+	font-family: 'Press Start 2P', normal;
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.scroll-content {
+	background-color: #222;
+}
+
+h1, h2, h3, h4 {
+	color: deepskyblue;
+	font-family: 'Press Start 2P', normal;
+	text-align: center;
+}
+
+p {
+   color: white;	
+}
+
+.text-center {
+	text-align: center;
+}
+
+.arcade-frame {
+	border: 3px solid deepskyblue;
+	border-radius: 5px;
+}
+
+.btn {
+	padding: 10px;
+	width: 90%;
+	font-family: 'Press Start 2P', normal;
+	border-radius: 5px;
+	margin: 10px 0;
+}
+
+.mar-b20 {
+	margin-bottom: 20px;
+}
