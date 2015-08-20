@@ -1,20 +1,26 @@
-<ion-view view-title="Robot Factory">
+<ion-view view-title="Robot Factory {{factory.version}}">
   <ion-content class="padding">
     <div>
       <div>
-      <p class="text-center" ng-if="state.factoryEmpty">Press the  button  to create a new robot!</p>
-      <p ng-if="!state.factoryEmpty">Name: {{robot.name}}</p>
-      <p ng-if="!state.factoryEmpty">ID: {{robot.id}}</p>
-      </div>
-      <div>
-       <canvas class="arcade-frame" id="main" height="250px" width="300px" ng-click=""><canvas> 
+       <canvas class="arcade-frame" id="main" height="260px" width="350px" ng-click=""><canvas> 
        </div>
-       
-       <div class="mar-b20">
-         <button class="button button-small button-balanced btn" data-ng-click="createRobot()" ng-show="state.factoryEmpty">Create Robot</button>
-         <button class="button button-small button-assertive btn" data-ng-click="destroyRobot(robotName)" ng-show="!state.factoryEmpty">Destroy Robot</button>
-        <button class="button button-small button-balanced btn" data-ng-click="saveRobot(robotName)" ng-show="!state.factoryEmpty">Save Robot</button>
+       <div class="arcade-frame">
+         <button class="button icon ion-plus-circled button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
+         <button class="button icon ion-nuclear button-assertive btn" data-ng-click="destroyRobot(robot)" data-ng-disabled="state.factoryEmpty"></button>
+        <button class="button icon ion-android-star button-balanced btn" data-ng-click="saveRobot(robot)" data-ng-disabled="state.factoryEmpty"></button>
         </div>
+        
+        <div>
+       <span class="fnt-trim text-left">Terminal 2000</span>
+       </div>
+       <div class="terminal">
+        <p class="fnt-s" ng-if="state.factoryEmpty">Press the <i class="ion-plus-circled fnt-m"></i> button  to create a new robot!</p>
+        <span class="fnt-s" ng-if="!state.factoryEmpty">
+          <p>New robot created!</p>
+          <p>Name: {{robot.name}}</p>
+          <p>Generation: {{robot.generation}}</span></p>
+      </div>
+      
     </div>
     
   </ion-content>

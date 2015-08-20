@@ -4,7 +4,6 @@
 }
 
 body {
-	background-color: black;
 	font-family: 'Press Start 2P', normal;
 	display: block;
 	margin: 0;
@@ -12,8 +11,12 @@ body {
 	text-align: center;
 }
 
+canvas {
+   background-color: rgb(0, 0, 0);	
+}
+
 .scroll-content {
-	background-color: #222;
+	background-color: rgb(25, 50, 15);
 }
 
 h1, h2, h3, h4 {
@@ -32,18 +35,64 @@ p {
 }
 
 .arcade-frame {
-	border: 3px solid deepskyblue;
-	border-radius: 5px;
+	border: 3px solid rgb(96, 175, 30);
+	border-radius: 10px;
+	margin: 5px;
 }
 
 .btn {
-	padding: 10px;
-	width: 90%;
+	width: 28%;
 	font-family: 'Press Start 2P', normal;
+	font-size: 12px;
+	color: rgb(0, 0, 0);
 	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	margin: 10px 0;
 }
 
 .mar-b20 {
 	margin-bottom: 20px;
+}
+
+.green {
+	background: rgb(73, 160, 5);
+}
+
+.tabs-background-military {
+	background: rgb(73, 160, 5);
+}
+
+.fnt-s {
+	font-size: 9px;
+	color: rgb(0, 215 35);
+	font-family: 'Press Start 2P', normal;
+}
+
+.fnt-m {
+	font-size: 13px;
+}
+
+.fnt-terminal {
+	font-size: 9px;
+	color: rgb(96, 175, 30);
+	font-family: 'Press Start 2P', normal;
+}
+
+.fnt-trim {
+	font-size: 9px;
+	color: rgb(50, 90, 15);
+	font-family: 'Press Start 2P', normal;
+}
+
+.terminal {
+	background-color: rgb(20, 40, 5);
+	border: 1px solid rgb(50, 90, 15);
+	border-radius: 10px;
+	margin: 5px;
+	padding: 15px;
+	min-height: 135px;
+}
+
+.text-left {
+	text-align: left;
 }

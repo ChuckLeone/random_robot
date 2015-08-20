@@ -5,13 +5,38 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FactoryCtrl', function($scope, Robots) {
+	
+	console.log(this.robot);
+	
+	$scope.destroyRobot = function(robot) {
+		$scope.state.factoryEmpty = true;
+		$scope.robot.push(this.robot);
+		console.log(this.robot);
+	}
+	
+	$scope.saveRobot = function(robot) {
+		Robots.add($scope.robot);
+		$scope.state.robotSaved = true;
+		console.log("adding new robot " + robot);
+	}
+	
+	$scope.factory = {
+		version : '0.1'
+	}
     
 	$scope.state = {
 		factoryEmpty: true,
 		robotSaved: true
 	};
+	
+	$scope.robot = {
+		 	name: 'weds',
+		    generation: '3'
+		};
   
 	$scope.createRobot = function() {
+		
+		$scope.state.factoryEmpty = false;
 		
 		var canvas = document.getElementById('main'),
 		context = canvas.getContext('2d');
@@ -39,39 +64,36 @@ angular.module('starter.controllers', [])
 		context.clearRect(x+2, y+2, 14, 4);
 		context.fillStyle = 'rgb(255, 0, 0)';
 		context.fillRect(x+6, y+2, 6, 4);
-		
 
 		function randomColor() {
-					for (var n = 0; n < 1; n ++) {
-						var letters = '0123456789ABCDEF'.split('');
-						var color = '#';
-							for (var i = 0; i < 6; i++ ) {
-								color += letters[Math.round(Math.random() * 15)];
-							}
-				} 
-			
-			$scope.robotName = color;
-			$scope.robotId = color + 'ASP';
+			for (var n = 0; n < 1; n ++) {
+				var letters = '0123456789ABCDEF'.split('');
+				var color = '#';
+					for (var i = 0; i < 6; i++ ) {
+						color += letters[Math.round(Math.random() * 15)];
+					}
+			} 
 			return color;
 		}
-		$scope.state.factoryEmpty = false;
-
-		return $scope.robot = ({
-			name: $scope.robotName,
-			id: $scope.robotId
-		})
+		
+		function randomName() {
+			var names = ['bob','hal','johhny5'];
+			return name = names[Math.floor(Math.random() * names.length)] + randomColor();
+		}
+		
+		function setGeneration() {
+			var generation = Math.floor(Math.random() * 8);
+			return generation;
+		}
+		
+		return $scope.robot = {
+			name: randomName(),
+		   generation: setGeneration()
+		};
+		
+		console.log("this robot is " + this.robot);
+		
 	};
-
-	$scope.destroyRobot = function() {
-		$scope.state.factoryEmpty = true;
-	}
-	
-	$scope.saveRobot = function(robot) {
-		console.log($scope.robotName);
-		Robots.add($scope.robot);
-		$scope.state.robotSaved = true;
-		console.log($scope.robot);
-	}
 	
 	// star field
 	/* Randomly generated star field by Chuck Leone
