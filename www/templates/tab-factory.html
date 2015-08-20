@@ -6,19 +6,23 @@
        </div>
        <div class="arcade-frame">
          <button class="button icon ion-plus-circled button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
-         <button class="button icon ion-nuclear button-assertive btn" data-ng-click="destroyRobot(robot)" data-ng-disabled="state.factoryEmpty"></button>
-        <button class="button icon ion-android-star button-balanced btn" data-ng-click="saveRobot(robot)" data-ng-disabled="state.factoryEmpty"></button>
+         <button class="button icon ion-nuclear button-assertive btn" data-ng-click="destroyRobot()" data-ng-disabled="state.factoryEmpty"></button>
+        <button class="button icon ion-android-star button-balanced btn" data-ng-click="saveRobot(this.robot)" data-ng-disabled="state.factoryEmpty"></button>
         </div>
         
         <div>
        <span class="fnt-trim text-left">Terminal 2000</span>
        </div>
        <div class="terminal">
-        <p class="fnt-s" ng-if="state.factoryEmpty">Press the <i class="ion-plus-circled fnt-m"></i> button  to create a new robot!</p>
-        <span class="fnt-s" ng-if="!state.factoryEmpty">
-          <p>New robot created!</p>
-          <p>Name: {{robot.name}}</p>
-          <p>Generation: {{robot.generation}}</span></p>
+
+        <span class="fnt-terminal fnt-message">
+          <p>{{state.message}}</p>
+        </span>
+        <span ng-if="!state.factoryEmpty">
+          <p class="fnt-terminal">Name: {{robot.name}}</p>
+          <p class="fnt-terminal">Generation: {{robot.generation}}</span></p>
+          <p class="fnt-terminal">Color: {{robot.color}}</p>
+         </span>
       </div>
       
     </div>

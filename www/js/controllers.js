@@ -6,18 +6,17 @@ angular.module('starter.controllers', [])
 
 .controller('FactoryCtrl', function($scope, Robots) {
 	
-	console.log(this.robot);
-	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
-		$scope.robot.push(this.robot);
-		console.log(this.robot);
+		console.log($scope.robot);
+		$scope.state.message = 'Robot destroyed!';
 	}
 	
 	$scope.saveRobot = function(robot) {
 		Robots.add($scope.robot);
 		$scope.state.robotSaved = true;
-		console.log("adding new robot " + robot);
+		$scope.state.factoryEmpty = true;
+		$scope.state.message = 'Robot saved to warehouse!';
 	}
 	
 	$scope.factory = {
@@ -26,15 +25,12 @@ angular.module('starter.controllers', [])
     
 	$scope.state = {
 		factoryEmpty: true,
-		robotSaved: true
+		robotSaved: true,
+		message: 'Press the add button to create a new robot'
 	};
-	
-	$scope.robot = {
-		 	name: 'weds',
-		    generation: '3'
-		};
   
 	$scope.createRobot = function() {
+		$scope.state.message = 'New robot created!';
 		
 		$scope.state.factoryEmpty = false;
 		
@@ -74,25 +70,26 @@ angular.module('starter.controllers', [])
 					}
 			} 
 			return color;
-		}
+		};
 		
 		function randomName() {
 			var names = ['bob','hal','johhny5'];
-			return name = names[Math.floor(Math.random() * names.length)] + randomColor();
-		}
+			return name = names[Math.floor(Math.random() * names.length)];
+		};
 		
 		function setGeneration() {
 			var generation = Math.floor(Math.random() * 8);
 			return generation;
-		}
-		
-		return $scope.robot = {
-			name: randomName(),
-		   generation: setGeneration()
 		};
 		
-		console.log("this robot is " + this.robot);
+		$scope.robot = {
+		 	name: randomName(),
+			generation: setGeneration(),
+		    color: randomColor()
+		};
 		
+		$scope.robot = this.robot;
+		console.log(this.robot);
 	};
 	
 	// star field

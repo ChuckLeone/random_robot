@@ -25,6 +25,13 @@ h1, h2, h3, h4 {
 	text-align: center;
 }
 
+h5, h6 {
+	color: rgb(0, 0, 0);
+	font-family: 'Press Start 2P', normal;
+	font-size: 14px;
+	text-align: left;
+}
+
 p {
    color: white;
    text-align: left;	
@@ -72,14 +79,18 @@ p {
 	font-size: 13px;
 }
 
+.fnt-message {
+	color: rgb(255, 255, 255);
+}
+
 .fnt-terminal {
-	font-size: 9px;
+	font-size: 7px;
 	color: rgb(96, 175, 30);
 	font-family: 'Press Start 2P', normal;
 }
 
 .fnt-trim {
-	font-size: 9px;
+	font-size: 6px;
 	color: rgb(50, 90, 15);
 	font-family: 'Press Start 2P', normal;
 }
