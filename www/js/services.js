@@ -3,8 +3,6 @@ angular.module('starter.services', [])
 .factory('Robots', function(){
   var robots = [];
   
-  //console.log(robots.name);
-  
   return {
     all: function() {
       return robots;
@@ -13,8 +11,6 @@ angular.module('starter.services', [])
       robots.splice(robots.indexOf(robot), 1);
     },
     add: function(robot) {
-      //robots.push(robots.indexOf(robot), 0);
-      //var index = robots.indexOf(robot);
       robots.push({
         id: robot.id,
         name: robot.name,
