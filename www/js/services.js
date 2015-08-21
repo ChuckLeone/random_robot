@@ -1,11 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('Robots', function(){
-  var robots = [{
-    name: 'wall-e',
-    gen: '1',
-    color: 'red'
-  },];
+  var robots = [];
   
   //console.log(robots.name);
   
@@ -18,9 +14,11 @@ angular.module('starter.services', [])
     },
     add: function(robot) {
       //robots.push(robots.indexOf(robot), 0);
+      //var index = robots.indexOf(robot);
       robots.push({
+        id: robot.id,
         name: robot.name,
-        gen: robot.gen,
+        generation: robot.generation,
         color: robot.color
       });
     },
