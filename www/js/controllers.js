@@ -86,7 +86,6 @@ angular.module('starter.controllers', [])
 		
 		function setId() {
 			var ids = Robots.all();
-			//var ids = Robots.all.length + 1;
 			return id = ids.length + 1;
 		}
 		
