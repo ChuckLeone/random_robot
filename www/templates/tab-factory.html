@@ -2,7 +2,8 @@
   <ion-content class="padding">
     <div>
       <div>
-       <canvas class="arcade-frame" id="main" height="260px" width="350px" ng-click=""><canvas> 
+       <canvas class="arcade-frame canvas_canvas" id="main" ng-click=""><canvas> 
+         <img class="canvas__mirror" src="" id="mirror" />
        </div>
        <div class="arcade-frame">
          <button class="button icon ion-plus-circled button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
