@@ -10,6 +10,7 @@ angular.module('starter.controllers', [])
 		$scope.state.factoryEmpty = true;
 		console.log($scope.robot);
 		$scope.state.message = 'Robot destroyed!';
+		context.clearRect(0, 0, canvas.width, canvas.height);
 	}
 	
 	$scope.saveRobot = function(robot) {
@@ -30,6 +31,7 @@ angular.module('starter.controllers', [])
 	};
   
 	$scope.createRobot = function() {
+		myStars();
 		$scope.state.message = 'New robot created!';
 		
 		$scope.state.factoryEmpty = false;
@@ -40,7 +42,7 @@ angular.module('starter.controllers', [])
 		var x = 150;
 		var y = 100;
 		
-		context.fillStyle= randomColor();
+		context.fillStyle = randomColor();
 		
 		// enemy body
 		context.fillRect(x, y, 20, 20);
@@ -184,8 +186,6 @@ angular.module('starter.controllers', [])
 		}
 		return;
 	};
-	
-	myStars();
   // end star field
 })
 
