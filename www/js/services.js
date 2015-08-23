@@ -15,7 +15,10 @@ angular.module('starter.services', [])
         id: robot.id,
         name: robot.name,
         generation: robot.generation,
-        color: robot.color
+        color: robot.color,
+        speed: robot.speed,
+        armor: robot.armor,
+        power: robot.power
       });
     },
     get: function(robotId) {

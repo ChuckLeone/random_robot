@@ -4,20 +4,35 @@ angular.module('starter.controllers', [])
    $scope.robots = Robots.all();	
 })
 
-.controller('FactoryCtrl', function($scope, Robots) {
+.controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, Robots) {
+	
+	// prevent scrolling on factory screen
+	$timeout(function() {
+	  $ionicScrollDelegate.$getByHandle('mainScroll').getScrollView().options.scrollingY = false
+      }, 1000);
 	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
 		console.log($scope.robot);
-		$scope.state.message = 'Robot destroyed!';
+		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'destroyed!';
 		context.clearRect(0, 0, canvas.width, canvas.height);
+		
+		$scope.robot = {
+			id: '',
+		 	name: '',
+			generation: '',
+		    color: '',
+			speed: '',
+			armor: '',
+			power: ''
+		};
 	}
 	
 	$scope.saveRobot = function(robot) {
 		Robots.add($scope.robot);
 		$scope.state.robotSaved = true;
 		$scope.state.factoryEmpty = true;
-		$scope.state.message = 'Robot saved to warehouse!';
+		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved to warehouse!';
 	}
 	
 	$scope.factory = {
@@ -27,12 +42,12 @@ angular.module('starter.controllers', [])
 	$scope.state = {
 		factoryEmpty: true,
 		robotSaved: true,
-		message: 'Press the add button to create a new robot'
+		message: 'Press run to create a new robot'
 	};
   
 	$scope.createRobot = function() {
+		
 		myStars();
-		$scope.state.message = 'New robot created!';
 		
 		$scope.state.factoryEmpty = false;
 		
@@ -75,7 +90,7 @@ angular.module('starter.controllers', [])
 		};
 		
 		function randomName() {
-			var names = ['bob','hal','johhny5'];
+			var names = ['CHAPPiE','R2D2','C3P0','BENDER','IG-88','AVA','4LOM','PROTEUS IV','JOHNNY 5','B.O.B.','V.I.CENT','PRIS','ROY','LEON','Zhora', 'T-800', 'BISHOP', 'OPTIMUS PRIME','MARVIN'];
 			return name = names[Math.floor(Math.random() * names.length)];
 		};
 		
@@ -93,11 +108,14 @@ angular.module('starter.controllers', [])
 			id: setId(),
 		 	name: randomName(),
 			generation: setGeneration(),
-		    color: randomColor()
+		    color: randomColor(),
+			speed: setGeneration(),
+			armor: setGeneration(),
+			power: setGeneration()
 		};
 		
 		$scope.robot = this.robot;
-		console.log(this.robot);
+		$scope.state.message = 'New robot ' + $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'created!';
 	};
 	
 	// star field
@@ -111,6 +129,8 @@ angular.module('starter.controllers', [])
 	context = canvas.getContext('2d');
 	
 	var myStars = function(){
+		
+		context.clearRect(0, 0, canvas.width, canvas.height);
 
 		for (i=1; i<=60;  i++) {	
 			var rndX = Math.floor((Math.random()*640) +1);
@@ -209,6 +229,19 @@ angular.module('starter.controllers', [])
 
 .controller('LabCtrl', function($scope) {
   $scope.settings = {
-    enableFriends: true
+    theme: false
   };
+  $scope.enableTheme = function(){
+	  if ($scope.settings.theme) {
+		  var elements = document.getElementsByClassName("pane")
+        	for (var i = 0; i < elements.length; i++) {
+            	elements[i].style.backgroundColor='rgb(240, 160, 40)';
+        	}
+	  } else {
+		   var elements = document.getElementsByClassName("pane")
+        	for (var i = 0; i < elements.length; i++) {
+            	elements[i].style.backgroundColor='rgb(30, 70, 60)';
+        	}
+	  }
+  }
 });

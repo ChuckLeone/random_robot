@@ -1,32 +1,35 @@
-<ion-view view-title="Robot Factory {{factory.version}}">
-  <ion-content class="padding">
+<ion-view view-title="Factory">
+  <ion-content class="padding" delegate-handle="mainScroll">
     <div>
-      <div>
-       <canvas class="arcade-frame canvas_canvas" id="main" ng-click=""><canvas> 
+      <div class="screen-frame"> 
+       <canvas class="canvas_canvas" id="main"></canvas> 
          <img class="canvas__mirror" src="" id="mirror" />
+           <p class="terminal fnt-terminal"><span class="prompt">$</span> {{state.message}}</p>
+           <table class="w-100p">
+             <caption class="terminal fnt-terminal">Stats</caption>
+             <tbody>
+               <tr>
+                <td class="terminal fnt-terminal w-50p">Id: {{robot.id}}</td>
+                <td class="terminal fnt-terminal w-50p">Generation: {{robot.generation}}</td>
+               </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p">Color: {{robot.color}}</td>
+                <td class="terminal fnt-terminal w-50p">Speed: {{robot.speed}}</td>
+               </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p">Power: {{robot.power}}</td>
+                <td class="terminal fnt-terminal w-50p">Armor: {{robot.armor}}</td>
+               </tr>
+           </tbody>
+           </table>
        </div>
-       <div class="arcade-frame">
-         <button class="button icon ion-plus-circled button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
+       
+       <div class="controls-frame">
+         <button class="button icon ion-arrow-right-b button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
          <button class="button icon ion-nuclear button-assertive btn" data-ng-click="destroyRobot()" data-ng-disabled="state.factoryEmpty"></button>
-        <button class="button icon ion-android-star button-balanced btn" data-ng-click="saveRobot(this.robot)" data-ng-disabled="state.factoryEmpty"></button>
-        </div>
-        
-        <div>
-       <span class="fnt-trim text-left">Terminal 2000</span>
+         <button class="button icon ion-android-star button-energized btn" data-ng-click="saveRobot(this.robot)" data-ng-disabled="state.factoryEmpty"></button>
        </div>
-       <div class="terminal">
-
-        <span class="fnt-terminal fnt-message">
-          <p>{{state.message}}</p>
-        </span>
-        <span ng-if="!state.factoryEmpty">
-          <p class="fnt-terminal">Name: {{robot.name}}</p>
-          <p class="fnt-terminal">Generation: {{robot.generation}}</span></p>
-          <p class="fnt-terminal">Color: {{robot.color}}</p>
-         </span>
-      </div>
-      
-    </div>
-    
+       
+    </div> 
   </ion-content>
 </ion-view>

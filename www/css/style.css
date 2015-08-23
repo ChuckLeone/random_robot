@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Press Start 2P';
-	src: url('/fonts/PressStart2P-Regular.ttf');
+	src: url('../lib/ionic/fonts/PressStart2P-Regular.ttf');
 }
 
 body {
@@ -11,24 +11,20 @@ body {
 	text-align: center;
 }
 
-canvas {
-   background-color: rgb(0, 0, 0);	
+.pane {
+	background: rgb(30, 70, 60);
+	background-size: cover;
 }
 
-.scroll-content {
-	background-color: rgb(25, 50, 15);
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3 {
 	color: deepskyblue;
 	font-family: 'Press Start 2P', normal;
 	text-align: center;
 }
 
-h5, h6 {
-	color: rgb(0, 0, 0);
+h4, h5, h6 {
+	color: rgb(250, 250, 250);
 	font-family: 'Press Start 2P', normal;
-	font-size: 14px;
 	text-align: left;
 }
 
@@ -37,25 +33,65 @@ p {
    text-align: left;	
 }
 
+table td {
+	text-align: left;
+}
+
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+    color: #fff;
+    border-color: rgb(77, 255, 100);
+    background-color:rgb(77, 200, 100);
+}
+
+.tabs-striped .tabs {
+   color: rgb(76, 215, 100);
+}
+
+.bar {
+  background-color: rgba(0, 0, 0, 0.2) !important; /* or transparent, or background:none */
+}
+
+.item {
+border-color:rgba(255, 255, 255, 0.2);
+  border-bottom: rgba(0, 0, 0, 0.6);
+  background:  rgba(0, 0, 0, 0.4);
+}
+
+.item-complex .item-content {
+	background-color: rgba(0, 0, 0, 0.4);
+	order-top: rgba(255, 255, 255, 0.6);
+}
+
 .text-center {
 	text-align: center;
 }
 
-.arcade-frame {
-	border: 3px solid rgb(96, 175, 30);
-	border-radius: 10px;
+.screen-frame {
+	border: 3px solid rgb(0, 0, 0);
+	background-color: rgb(10, 30, 10);
+	border-radius: 8px;
+	margin: 20px 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.controls-frame {
+	background-image: url("../img/cabinet-wood.jpg");
+	background-size: 100;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 8px;
 	margin: 5px;
 	width: 100%;
 }
 
 .btn {
-	width: 28%;
+	width: 25%;
 	font-family: 'Press Start 2P', normal;
 	font-size: 12px;
 	color: rgb(0, 0, 0);
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.5);
-	margin: 10px 0;
+	margin: 10px 2px;
 }
 
 .mar-b20 {
@@ -80,29 +116,26 @@ p {
 	font-size: 13px;
 }
 
-.fnt-message {
-	color: rgb(255, 255, 255);
-}
-
 .fnt-terminal {
-	font-size: 7px;
-	color: rgb(96, 175, 30);
+	font-size: 9px;
+	color: rgb(96, 275, 30);
 	font-family: 'Press Start 2P', normal;
+	padding: 10px;
 }
 
 .fnt-trim {
-	font-size: 6px;
-	color: rgb(50, 90, 15);
+	font-size: 9px;
+	text-align: left;
+	color: rgb(255, 255, 255);
 	font-family: 'Press Start 2P', normal;
 }
 
 .terminal {
-	background-color: rgb(20, 40, 5);
-	border: 1px solid rgb(50, 90, 15);
-	border-radius: 10px;
-	margin: 5px;
-	padding: 15px;
-	min-height: 135px;
+   z-index: 1
+}
+
+.prompt {
+	color: rgb(255, 255, 255);
 }
 
 .text-left {
@@ -110,15 +143,24 @@ p {
 }
 
 .canvas__canvas {
-  height: 100%;
   position: relative;
-  width: 100%;
   z-index: 1;
 }
+
 .canvas__mirror {
-  height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%; 
+}
+
+/************
+/ widths
+/************/
+
+.w-100p {
+	width: 100%;
+}
+
+.w-50p {
+	width: 50%;
 }
