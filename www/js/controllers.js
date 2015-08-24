@@ -244,13 +244,13 @@ angular.module('starter.controllers', [])
 	  if ($scope.settings.theme) {
 		  var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
-            	elements[i].style.backgroundColor='rgb(240, 160, 40)';
+            	elements[i].style.backgroundColor='rgb(233,233,206)';
 				elements[i].style.backgroundImage='none';
         	}
 	  } else {
 		   var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
-            	elements[i].style.backgroundImage='url("../img/cabinet-wood.jpg")';
+            	elements[i].style.backgroundImage='url("img/cabinet-wood.jpg")';
         	}
 	  }
   }
