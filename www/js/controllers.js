@@ -124,7 +124,7 @@ angular.module('starter.controllers', [])
 		};
 		
 		$scope.robot = this.robot;
-		$scope.state.message = 'New ' + $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'created!';
+		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'created!';
 	};
 	
 	// star field
@@ -244,7 +244,7 @@ angular.module('starter.controllers', [])
 	  if ($scope.settings.theme) {
 		  var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
-            	elements[i].style.backgroundColor='rgb(233,233,206)';
+            	elements[i].style.backgroundImage='url("img/ti-80.jpg")';
 				elements[i].style.backgroundImage='none';
         	}
 	  } else {
