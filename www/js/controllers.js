@@ -245,11 +245,12 @@ angular.module('starter.controllers', [])
 		  var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
             	elements[i].style.backgroundColor='rgb(240, 160, 40)';
+				elements[i].style.backgroundImage='none';
         	}
 	  } else {
 		   var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
-            	elements[i].style.backgroundColor='rgb(30, 70, 60)';
+            	elements[i].style.backgroundImage='url("../img/cabinet-wood.jpg")';
         	}
 	  }
   }

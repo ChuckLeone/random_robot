@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.utils'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $localstorage, Robots) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
+    
+    // local storage here to save settings and robots in my warehouse
+    $localstorage.set(Robots);
+    console.log($localstorage.get('name','id'));
+    $localstorage.setObject('post', {
+      name: '',
+      id: '',
+      color: ''
+    });
+  
+    var post = $localstorage.getObject('post');
+    console.log(post);
+    //
   });
 })
 

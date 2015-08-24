@@ -14,7 +14,6 @@ body {
 .pane {
 	background-image: url("../img/cabinet-wood.jpg");
 	background-repeat: none;
-	/*background: rgb(30, 70, 60);*/
 	background-size: cover;
 }
 

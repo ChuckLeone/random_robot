@@ -1,10 +1,11 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ionic.utils'])
 
-.factory('Robots', function(){
+.factory('Robots', function($localstorage){
   var robots = [];
   
   return {
     all: function() {
+      console.log($localstorage);
       return robots;
     },
     remove: function(robot) {
@@ -19,7 +20,8 @@ angular.module('starter.services', [])
         speed: robot.speed,
         armor: robot.armor,
         power: robot.power
-      });
+      }
+   );
     },
     get: function(robotId) {
       for (var i = 0; i < robots.length; i++) {
@@ -30,6 +32,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
+  
 })
 
 .factory('Chats', function() {
@@ -80,3 +83,22 @@ angular.module('starter.services', [])
     }
   };
 });
+
+angular.module('ionic.utils', [])
+
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}]);
