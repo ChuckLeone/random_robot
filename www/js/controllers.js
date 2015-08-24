@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
 	$scope.state = {
 		factoryEmpty: true,
 		robotSaved: true,
-		message: 'Press run to create a new robot'
+		message: 'Press run to create a robot'
 	};
   
 	$scope.createRobot = function() {
@@ -115,7 +115,7 @@ angular.module('starter.controllers', [])
 		};
 		
 		$scope.robot = this.robot;
-		$scope.state.message = 'New robot ' + $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'created!';
+		$scope.state.message = 'New ' + $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'created!';
 	};
 	
 	// star field

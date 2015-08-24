@@ -1,35 +1,37 @@
 <ion-view view-title="Factory">
-  <ion-content class="padding" delegate-handle="mainScroll">
-    <div>
+  <ion-content delegate-handle="mainScroll">
+    <div class="pad-30 black">
       <div class="screen-frame"> 
        <canvas class="canvas_canvas" id="main"></canvas> 
          <img class="canvas__mirror" src="" id="mirror" />
            <p class="terminal fnt-terminal"><span class="prompt">$</span> {{state.message}}</p>
            <table class="w-100p">
-             <caption class="terminal fnt-terminal">Stats</caption>
+             <caption class="terminal fnt-terminal caps" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Stats</caption>
              <tbody>
                <tr>
-                <td class="terminal fnt-terminal w-50p">Id: {{robot.id}}</td>
-                <td class="terminal fnt-terminal w-50p">Generation: {{robot.generation}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Id: {{robot.id}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Generation: {{robot.generation}}</td>
                </tr>
                <tr>
-                <td class="terminal fnt-terminal w-50p">Color: {{robot.color}}</td>
-                <td class="terminal fnt-terminal w-50p">Speed: {{robot.speed}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Color: {{robot.color}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Speed: {{robot.speed}}</td>
                </tr>
                <tr>
-                <td class="terminal fnt-terminal w-50p">Power: {{robot.power}}</td>
-                <td class="terminal fnt-terminal w-50p">Armor: {{robot.armor}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Power: {{robot.power}}</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Armor: {{robot.armor}}</td>
                </tr>
            </tbody>
            </table>
        </div>
-       
-       <div class="controls-frame">
+    </div> 
+    <div>
+      <div class="controls-frame">
+        <div class="controls">
          <button class="button icon ion-arrow-right-b button-balanced btn" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty"></button>
          <button class="button icon ion-nuclear button-assertive btn" data-ng-click="destroyRobot()" data-ng-disabled="state.factoryEmpty"></button>
          <button class="button icon ion-android-star button-energized btn" data-ng-click="saveRobot(this.robot)" data-ng-disabled="state.factoryEmpty"></button>
+        </div>
        </div>
-       
-    </div> 
+    </div>
   </ion-content>
 </ion-view>

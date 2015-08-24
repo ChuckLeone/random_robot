@@ -12,7 +12,9 @@ body {
 }
 
 .pane {
-	background: rgb(30, 70, 60);
+	background-image: url("../img/cabinet-wood.jpg");
+	background-repeat: none;
+	/*background: rgb(30, 70, 60);*/
 	background-size: cover;
 }
 
@@ -37,14 +39,25 @@ table td {
 	text-align: left;
 }
 
+.tabs {
+	height: 50px;
+	background: transparent;
+}
+
+.tabs-striped .tabs {
+	border-bottom: none;
+}
+
 .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
     color: #fff;
-    border-color: rgb(77, 255, 100);
-    background-color:rgb(77, 200, 100);
+	background: linear-gradient(to bottom, rgba(116,70,0,0.7) 1%,rgba(68,40,30,0) 100%);
+	margin-top: 2px;
+	border-bottom: 2px solid green;
 }
 
 .tabs-striped .tabs {
    color: rgb(76, 215, 100);
+   background: transparent;
 }
 
 .bar {
@@ -52,46 +65,56 @@ table td {
 }
 
 .item {
-border-color:rgba(255, 255, 255, 0.2);
+ border-color:rgba(255, 255, 255, 0.2);
   border-bottom: rgba(0, 0, 0, 0.6);
   background:  rgba(0, 0, 0, 0.4);
 }
 
 .item-complex .item-content {
 	background-color: rgba(0, 0, 0, 0.4);
-	order-top: rgba(255, 255, 255, 0.6);
+	border-top: rgba(255, 255, 255, 0.6);
 }
 
 .text-center {
 	text-align: center;
 }
 
+.wood-panel {
+	background-image: url("../img/cabinet-wood.jpg");
+}
+
+.black {
+	background-color: rgba(0, 0, 0,0.15);
+}
+
 .screen-frame {
-	border: 3px solid rgb(0, 0, 0);
+	border: 1px solid rgb(205, 205, 205);
 	background-color: rgb(10, 30, 10);
 	border-radius: 8px;
-	margin: 20px 5px;
 	width: 100%;
 	height: 100%;
 }
 
 .controls-frame {
-	background-image: url("../img/cabinet-wood.jpg");
-	background-size: 100;
-	border: 2px solid rgb(0, 0, 0);
-	border-radius: 8px;
-	margin: 5px;
+	/*background-color: rgb(0, 0, 0);*/
+	border-top: 25px solid rgba(255, 255, 255, 0.1);
+	padding: 20px;
 	width: 100%;
 }
 
+.controls {
+	margin: 0;
+}
+
 .btn {
-	width: 25%;
-	font-family: 'Press Start 2P', normal;
+	width: 50px;
+	height: 50px;
+	font-family: 'Press Start 2P', normag;
 	font-size: 12px;
-	color: rgb(0, 0, 0);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	margin: 10px 2px;
+	border-radius: 100px;
+	color: rgb(255, 255, 255);
+	border: 3px solid rgba(255, 255, 255, 0.3);
+	margin: 4px 0;
 }
 
 .mar-b20 {
@@ -99,7 +122,7 @@ border-color:rgba(255, 255, 255, 0.2);
 }
 
 .green {
-	background: rgb(73, 160, 5);
+	background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%);
 }
 
 .tabs-background-military {
@@ -120,7 +143,12 @@ border-color:rgba(255, 255, 255, 0.2);
 	font-size: 9px;
 	color: rgb(96, 275, 30);
 	font-family: 'Press Start 2P', normal;
-	padding: 10px;
+	padding: 0 10px;
+}
+
+.fnt-deactivate {
+	color: rgb(22, 44, 22);
+	font-family: 'Press Start 2P', normal;
 }
 
 .fnt-trim {
@@ -128,6 +156,10 @@ border-color:rgba(255, 255, 255, 0.2);
 	text-align: left;
 	color: rgb(255, 255, 255);
 	font-family: 'Press Start 2P', normal;
+}
+
+.caps{
+	text-transform: uppercase;
 }
 
 .terminal {
@@ -163,4 +195,12 @@ border-color:rgba(255, 255, 255, 0.2);
 
 .w-50p {
 	width: 50%;
+}
+
+/************
+/ mods
+/************/
+
+.pad-30 {
+	padding: 30px;
 }
