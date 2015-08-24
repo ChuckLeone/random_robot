@@ -13,7 +13,6 @@ angular.module('starter.controllers', [])
 	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
-		console.log($scope.robot);
 		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'destroyed!';
 		context.clearRect(0, 0, canvas.width, canvas.height);
 		
@@ -32,7 +31,17 @@ angular.module('starter.controllers', [])
 		Robots.add($scope.robot);
 		$scope.state.robotSaved = true;
 		$scope.state.factoryEmpty = true;
-		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved to warehouse!';
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved!';
+		$scope.robot = {
+			id: '',
+		 	name: '',
+			generation: '',
+		    color: '',
+			speed: '',
+			armor: '',
+			power: ''
+		};
 	}
 	
 	$scope.factory = {
