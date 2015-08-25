@@ -245,7 +245,6 @@ angular.module('starter.controllers', [])
 		  var elements = document.getElementsByClassName("pane")
         	for (var i = 0; i < elements.length; i++) {
             	elements[i].style.backgroundImage='url("img/ti-80.jpg")';
-				elements[i].style.backgroundImage='none';
         	}
 	  } else {
 		   var elements = document.getElementsByClassName("pane")

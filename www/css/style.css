@@ -97,8 +97,8 @@ table td {
 }
 
 .controls-frame {
-	border-top: 25px solid rgba(255, 255, 255, 0.1);
-	padding: 20px;
+	border-top: 10px solid rgba(255, 255, 255, 0.1);
+	padding: 15px;
 	width: 100%;
 }
 
@@ -215,6 +215,10 @@ hr {
 	width: 50%;
 }
 
+.w-40p {
+	width: 40%;
+}
+
 /************
 / mods
 /************/
@@ -244,6 +248,6 @@ hr {
 	border-top: 3px solid rgba(197, 85, 189, 1);	
 	border-bottom: 3px solid rgba(165, 40, 40, 1);	
 	box-shadow:  0 0 0 5px rgba(255, 255, 255, 0.1);
-	margin: 30px 0 0 0 ;
+	margin: 10px 0 0 0 ;
 	padding: 8px;
 }
