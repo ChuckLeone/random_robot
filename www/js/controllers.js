@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
 		context = canvas.getContext('2d');
 		
 		var x = 150;
-		var y = 100;
+		var y = 50;
 		
 		context.fillStyle = randomColor();
 		
