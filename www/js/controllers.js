@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
 	$scope.factory = {
 		version : '0.1'
 	}
-    
+   
 	$scope.state = {
 		factoryEmpty: true,
 		robotSaved: true,
@@ -234,6 +234,14 @@ angular.module('starter.controllers', [])
 
 .controller('RobotDetailCtrl', function($scope, $stateParams, Robots) {
   $scope.robot = Robots.get($stateParams.robotId);
+  
+  var canvas = document.getElementById('detail'),
+  context = canvas.getContext('2d');
+		
+		var x = 150;
+		var y = 50;
+		context.fillStyle = 'rgb(255, 255, 255)';
+		context.fillRect(x, y, 1, 1);
 })
 
 .controller('LabCtrl', function($scope) {
