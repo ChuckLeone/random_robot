@@ -1,11 +1,10 @@
-angular.module('starter.services', ['ionic.utils'])
+angular.module('starter.services', [])
 
-.factory('Robots', function($localstorage){
+.factory('Robots', function(){
   var robots = [];
   
   return {
     all: function() {
-      console.log($localstorage);
       return robots;
     },
     remove: function(robot) {
@@ -33,23 +32,4 @@ angular.module('starter.services', ['ionic.utils'])
     }
   };
   
-})
-
-angular.module('ionic.utils', [])
-
-.factory('$localstorage', ['$window', function($window) {
-  return {
-    set: function(key, value) {
-      $window.localStorage[key] = value;
-    },
-    get: function(key, defaultValue) {
-      return $window.localStorage[key] || defaultValue;
-    },
-    setObject: function(key, value) {
-      $window.localStorage[key] = JSON.stringify(value);
-    },
-    getObject: function(key) {
-      return JSON.parse($window.localStorage[key] || '{}');
-    }
-  }
-}]);
+});

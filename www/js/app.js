@@ -5,9 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.utils'])
+var db = null;
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
-.run(function($ionicPlatform, $localstorage, Robots) {
+.run(function($ionicPlatform, $cordovaSQLite, Robots) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,18 +22,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleLightContent();
     }
     
-    // local storage here to save settings and robots in my warehouse
-    $localstorage.set(Robots);
-    console.log($localstorage.get('name','id'));
-    $localstorage.setObject('post', {
-      name: '',
-      id: '',
-      color: ''
-    });
-  
-    var post = $localstorage.getObject('post');
-    console.log(post);
+    // insert db
     //
+    var db = $cordovaSQLite.openDB({name: "my.db"});
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
+    // insert db
   });
 })
 
