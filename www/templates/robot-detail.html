@@ -5,9 +5,58 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{robot.name}}">
-  <ion-content class="padding">
-     <h4>{{robot.name}}</h4>
-     <p>Generation: {{robot.generation}}</p>
-     <p>Color: {{robot.color}}</p>
+  <ion-content class="pad-20 black">
+    <div class="screen-frame">
+      <div> 
+       <canvas class="canvas_canvas" id="detail"></canvas> 
+       </div>
+        
+     </div>
+     <div class="float-left w-40p">
+           <table>
+             <tbody>
+               <caption class="terminal fnt-terminal caps" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Info</caption>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Name: </td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.name}}</td>
+               </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">ID: </td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.id}}</td>
+                </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Gen:</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.generation}}</td>
+                </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Color:</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.color}}</td>
+                </tr>             
+             </tbody>
+           </table>
+           </div>
+           <div class="float-right w-40p">
+             <table>
+             <tbody>
+               <caption class="terminal fnt-terminal caps" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Stats</caption>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Speed: </td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.speed}}</td>
+               </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Power: </td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.speed}}</td>
+                </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Power:</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.power}}</td>
+                </tr>
+               <tr>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Armor:</td>
+                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.power}}</td>
+                </tr>             
+             </tbody>
+           </table>
+         </div>
   </ion-content>
 </ion-view>
