@@ -6,30 +6,6 @@ angular.module('starter.controllers', [])
 
 .controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, $localStorage, Robots) {
 	
-	// db testing
-	$scope.insert = function(firstname, lastname) {
-		var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
-		$cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(result) {
-			console.log("INSERT ID -> " + result.insertId);
-		}, function (error) {
-			console.error(error);
-		});
-	}
-	
-		$scope.select = function(lastname) {
-		var query = "SELECT firstname, lastname FROM people WHERE lastname = ?";
-		$cordovaSQLite.execute(db, query, [lastname]).then(function(result) {
-			if(result.rows.length > 0) {
-				console.log("SELECTED -> " + result.rows.item(0).firstname + " " + result.rows.item(0).lastname);
-			} else {
-				console.log("No results found");
-			}
-		}, function (error) {
-			console.error(error);
-		});
-	}
-		// db testing
-	
 	// prevent scrolling on factory screen
 	$timeout(function() {
 	  $ionicScrollDelegate.$getByHandle('mainScroll').getScrollView().options.scrollingY = false
