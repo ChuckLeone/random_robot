@@ -13,7 +13,8 @@ angular.module('starter.controllers', [])
 	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
-		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'destroyed!';
+		$scope.state.robotSaved = false;
+		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'retired!';
 		context.clearRect(0, 0, canvas.width, canvas.height);
 		
 		$scope.robot = {
@@ -30,18 +31,18 @@ angular.module('starter.controllers', [])
 	$scope.saveRobot = function(robot) {
 		Robots.add($scope.robot);
 		$scope.state.robotSaved = true;
-		$scope.state.factoryEmpty = true;
-		context.clearRect(0, 0, canvas.width, canvas.height);
+		// $scope.state.factoryEmpty = true;
+		// context.clearRect(0, 0, canvas.width, canvas.height);
 		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved!';
-		$scope.robot = {
-			id: '',
-		 	name: '',
-			generation: '',
-		    color: '',
-			speed: '',
-			armor: '',
-			power: ''
-		};
+		// $scope.robot = {
+		// 	id: '',
+		//  	name: '',
+		// 	generation: '',
+		//     color: '',
+		// 	speed: '',
+		// 	armor: '',
+		// 	power: ''
+		// };
 	}
 	
 	$scope.factory = {
@@ -50,7 +51,7 @@ angular.module('starter.controllers', [])
    
 	$scope.state = {
 		factoryEmpty: true,
-		robotSaved: true,
+		robotSaved: false,
 		message: 'Press run to create a robot'
 	};
   
@@ -99,7 +100,7 @@ angular.module('starter.controllers', [])
 		};
 		
 		function randomName() {
-			var names = ['CHAPPiE','R2D2','C3P0','BENDER','IG-88','AVA','4LOM','PROTEUS IV','JOHNNY 5','B.O.B.','V.I.CENT','PRIS','ROY','LEON','Zhora', 'T-800', 'BISHOP', 'OPTIMUS PRIME','MARVIN'];
+			var names = ['CHAPPiE','R2D2','C3P0','BENDER','IG-88','AVA','4LOM','PROTEUS','JOHNNY','B.O.B.','V.I.CENT','PRIS','ROY','LEON','Zhora', 'T-800', 'BISHOP', 'OPTIMUS','MARVIN'];
 			return name = names[Math.floor(Math.random() * names.length)];
 		};
 		

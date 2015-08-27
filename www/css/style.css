@@ -102,18 +102,59 @@ table td {
 }
 
 .controls {
-	margin: 0;
+	margin: 10px 0 20px 0;
+}
+
+.game-controls {
+	margin: 10px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	border-radius: 10px;
+	background-color: rgb(20, 20, 20);
+	box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+	padding: 10px;
 }
 
 .btn {
-	width: 60px;
+	width: 25%;
 	height: 60px;
 	font-family: 'Press Start 2P', normag;
 	font-size: 12px;
 	border-radius: 8px;
 	color: rgb(255, 255, 255);
 	background-color:  rgba(0, 0, 0, 1);
-	margin: 4px 0;
+	margin: 5px;
+}
+
+.btn-sm {
+	min-width: 60px;
+	min-height: 30px;
+	max-height: 50px;
+	font-family: 'Press Start 2P', normal;
+	font-size: 7px;
+	border-radius: 40px;
+	color: rgb(0, 0, 0);
+	background-color: rgb(150, 150, 150);
+	padding: 0;
+	margin: 2px 0;
+	line-height: 1;
+}
+
+.btn-start {
+	background-color: rgba(0, 0, 0, 1);
+	border-color: rgba(40, 165, 40, 1);
+	color: rgba(40, 165, 40, 1);
+}
+
+.btn-reset {
+	background-color: rgba(0, 0, 0, 1);
+	border-color: rgba(255, 0, 0, 1);
+	color: rgba(255, 0, 0, 1);
+}
+
+.btn-save {
+	background-color: rgba(0, 0, 0, 1);
+	border-color: rgba(255, 165, 0, 1);
+	color: rgba(255, 165, 0, 1)
 }
 
 .btn-red {
@@ -126,6 +167,10 @@ table td {
 
 .btn-orange {
 	border: 3px solid rgba(255, 165, 0, 1);
+}
+
+.yellow {
+   color: rgba(255, 165, 0, 1);
 }
 
 .mar-b20 {
@@ -144,6 +189,10 @@ table td {
 
 .fnt-m {
 	font-size: 13px;
+}
+
+.smaller {
+	font-size: smaller;
 }
 
 .fnt-terminal {
