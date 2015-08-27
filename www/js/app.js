@@ -8,6 +8,7 @@
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ngStorage'])
 
+
 .run(function($ionicPlatform, $cordovaSQLite, Robots) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
