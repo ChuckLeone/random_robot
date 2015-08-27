@@ -23,6 +23,7 @@
          <button class="button btn-sm btn-reset caps" data-ng-click="destroyRobot()" data-ng-disabled="state.factoryEmpty">reset</button>
          <button class="button btn-sm btn-save caps" data-ng-click="saveRobot(this.robot)" data-ng-if="!state.factoryEmpty && !state.robotSaved">save</button>
          <button class="button btn-sm btn-load caps" data-ng-click="loadRobot()" data-ng-if="state.factoryEmpty || state.robotSaved">load</button>
+         {{message}}
         </div>
         <div class="game-controls">
          <button class="button icon ion-arrow-left-b btn btn-red" data-ng-click="playGame()" data-ng-disabled="state.factoryEmpty"></button>
