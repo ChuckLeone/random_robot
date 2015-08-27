@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
    $scope.robots = Robots.all();	
 })
 
-.controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, Robots) {
+.controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, $localStorage, Robots) {
 	
 	// prevent scrolling on factory screen
 	$timeout(function() {
@@ -43,6 +43,12 @@ angular.module('starter.controllers', [])
 		// 	armor: '',
 		// 	power: ''
 		// };
+		
+		$localStorage.message = "Robot was saved";
+	}
+	
+	$scope.loadRobot = function() {
+		$scope.message = $localStorage.message;
 	}
 	
 	$scope.factory = {
