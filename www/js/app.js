@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var db = null;
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ngStorage'])
 
 .run(function($ionicPlatform, $cordovaSQLite, Robots) {
@@ -22,11 +22,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleLightContent();
     }
     
-    // insert db
-    //
-    var db = $cordovaSQLite.openDB({name: "my.db"});
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
-    // insert db
   });
 })
 
