@@ -44,11 +44,11 @@ angular.module('starter.controllers', [])
 		// 	power: ''
 		// };
 		
-		$localStorage.message = "Robot was saved";
+		$localStorage.object = Robots.all;
 	}
 	
 	$scope.loadRobot = function() {
-		$scope.message = $localStorage.message;
+		$scope.robots = $localStorage.object;
 	}
 	
 	$scope.factory = {

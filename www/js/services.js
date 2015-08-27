@@ -1,6 +1,7 @@
-angular.module('starter.services', [])
+angular.module('starter.services')
 
-.factory('Robots', function(){
+.factory('Robots', function($localStorage){
+  var queries = $localStorage.get('queries') || [];
   var robots = [];
   
   return {
