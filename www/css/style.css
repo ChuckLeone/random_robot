@@ -157,6 +157,12 @@ table td {
 	color: rgba(255, 165, 0, 1)
 }
 
+.btn-load {
+	background-color: rgba(0, 0, 0, 1);
+	border-color: rgba(0, 100, 255, 1);
+	color: rgba(0, 100, 255, 1);
+}
+
 .btn-red {
 	border: 3px solid rgba(165, 40, 40, 1);
 }
