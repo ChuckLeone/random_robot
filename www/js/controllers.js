@@ -6,6 +6,7 @@ angular.module('starter.controllers', [])
 
 .controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, $localStorage, Robots) {
 	
+	$scope.message = $localStorage.length;
 	// prevent scrolling on factory screen
 	$timeout(function() {
 	  $ionicScrollDelegate.$getByHandle('mainScroll').getScrollView().options.scrollingY = false
@@ -13,7 +14,7 @@ angular.module('starter.controllers', [])
 	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
-		$scope.state.robotSaved = false;
+		$scope.state.robotSaved = false																		;
 		$scope.state.message = $scope.robot.name + ' ' + $scope.robot.generation + ' ' + 'retired!';
 		context.clearRect(0, 0, canvas.width, canvas.height);
 		
@@ -30,25 +31,15 @@ angular.module('starter.controllers', [])
 	
 	$scope.saveRobot = function(robot) {
 		Robots.add($scope.robot);
+		Robots.post();
 		$scope.state.robotSaved = true;
-		// $scope.state.factoryEmpty = true;
-		// context.clearRect(0, 0, canvas.width, canvas.height);
 		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved!';
-		// $scope.robot = {
-		// 	id: '',
-		//  	name: '',
-		// 	generation: '',
-		//     color: '',
-		// 	speed: '',
-		// 	armor: '',
-		// 	power: ''
-		// };
-		
-		$localStorage.message = "Robot was saved";
+		$localStorage = Robots.all(robot);
+		console.log($localStorage);
 	}
 	
 	$scope.loadRobot = function() {
-		$scope.message = $localStorage.message;
+		$scope.message;
 	}
 	
 	$scope.factory = {
@@ -58,7 +49,7 @@ angular.module('starter.controllers', [])
 	$scope.state = {
 		factoryEmpty: true,
 		robotSaved: false,
-		message: 'Press run to create a robot'
+		message: 'Press start to create a robot'
 	};
   
 	$scope.createRobot = function() {
@@ -230,8 +221,9 @@ angular.module('starter.controllers', [])
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  $scope.$on('$ionicView.enter', function(e) {
+	  
+  });
 
   $scope.robots = Robots.all();
   $scope.remove = function(robot) {

@@ -1,7 +1,12 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ngStorage'])
 
-.factory('Robots', function(){
-  var robots = [];
+.factory('Robots', function($localStorage){
+
+ var $storage = $localStorage.$default({
+   robots:[]
+ });
+ 
+ var robots=$storage.robots;
   
   return {
     all: function() {
@@ -19,8 +24,7 @@ angular.module('starter.services', [])
         speed: robot.speed,
         armor: robot.armor,
         power: robot.power
-      }
-   );
+      })
     },
     get: function(robotId) {
       for (var i = 0; i < robots.length; i++) {
@@ -29,7 +33,11 @@ angular.module('starter.services', [])
         }
       }
       return null;
-    }
+    },
+
+    post: function () {
+      $localStorage = robots;
+      }
   };
   
 });
