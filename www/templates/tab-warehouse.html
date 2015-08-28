@@ -1,5 +1,14 @@
-<ion-view view-title="Warehouse">
+<ion-header-bar align-title="center" class="logo">
+<h1 class="title pad-5"><img src="img/logo.png" class="small"></h1>
+<div class="buttons">
+    <a class="button btn-sm btn-reset caps" href="#/tab/factory">X</a>
+  </div>
+</ion-header-bar>
+<ion-view view-title="Warehouse" hide-nav-bar="true">
   <ion-content>
+    <div>
+   
+    </div>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="robot in robots" type="item-text-wrap" href="#/tab/robots/{{robot.id}}">
         <!--<img ng-src="{{robot.image}}">-->

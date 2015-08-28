@@ -38,6 +38,10 @@ table td {
 	text-align: left;
 }
 
+a.button {
+	padding: 10px;
+}
+
 .tabs {
 	height: 50px;
 	background: transparent;
@@ -52,6 +56,7 @@ table td {
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1%,rgba(68,40,30,0) 100%);
 	margin-top: 2px;
 	border-bottom: 2px solid rgba(255, 165, 0, 1);
+	border-bottom: 0;
 }
 
 .tabs-striped .tabs {
@@ -60,7 +65,7 @@ table td {
 }
 
 .bar {
-  background-color: rgba(0, 0, 0, 1) !important; /* or transparent, or background:none */
+  background-color: rgba(0, 0, 0, 0) !important; /* or transparent, or background:none */
 }
 
 .item {
@@ -277,6 +282,14 @@ hr {
 / mods
 /************/
 
+.pad-5 {
+	padding: 5px;
+}
+
+.pad-10 {
+	padding: 10px;
+}
+
 .pad-20 {
 	padding: 20px;
 }
@@ -298,9 +311,16 @@ hr {
 
 .logo {
 	color: rgba(255, 255, 255, 1);
-	background-color: rgb(0, 0, 0);
-	border-top: 3px solid rgba(197, 85, 189, 1);	
-	border-bottom: 3px solid rgba(165, 40, 40, 1);	
-	box-shadow:  0 0 0 5px rgba(255, 255, 255, 0.1);
+	border-top: 6px solid rgba(255, 255, 255, 0.2);	
 	margin: 0 auto;
+	padding: 15px;
+}
+
+.logo .small {
+	height: 30px;
+	margin: 5px 0;
+}
+
+.border-bot {
+	border-bottom: 6px solid rgba(255, 255, 255, 0.2);	
 }

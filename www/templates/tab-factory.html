@@ -1,4 +1,7 @@
-<ion-view view-title="Factory">
+<ion-header-bar align-title="center" class="logo">
+<h1 class="title pad-5"><img src="img/logo.png" class="small"></h1>
+</ion-header-bar>
+<ion-view view-title="Factory" hide-nav-bar="true">
   <ion-content delegate-handle="mainScroll">
     <div class="pad-20 black">
       <div class="screen-frame">
@@ -19,12 +22,12 @@
          <button class="button btn-sm btn-start caps" data-ng-click="createRobot()" data-ng-disabled="!state.factoryEmpty">start</button>
          <button class="button btn-sm btn-reset caps" data-ng-click="destroyRobot()" data-ng-disabled="state.factoryEmpty">reset</button>
          <button class="button btn-sm btn-save caps" data-ng-click="saveRobot(this.robot)" data-ng-if="!state.factoryEmpty && !state.robotSaved">save</button>
-         <button class="button btn-sm btn-load caps" data-ng-click="loadRobot()" data-ng-if="state.factoryEmpty || state.robotSaved">load</button>
+         <a class="button btn-sm btn-load caps" href="#/tab/warehouse" data-ng-if="state.factoryEmpty || state.robotSaved">load</a>
         </div>
         <div class="game-controls">
-         <button class="button icon ion-arrow-left-b btn btn-red" data-ng-click="insert('chuck', 'leone')" data-ng-disabled="state.factoryEmpty"></button>
-         <button class="button icon ion-arrow-right-b btn btn-red" data-ng-click="select('leone')" data-ng-disabled="state.factoryEmpty"></button>
-         <button class="button icon ion-asterisk btn btn-red" data-ng-click="" data-ng-disabled="state.factoryEmpty"></button>
+         <button class="button icon ion-arrow-left-b btn btn-red" data-ng-click=""></button>
+         <button class="button icon ion-arrow-right-b btn btn-red" data-ng-click=""></button>
+         <button class="button icon ion-asterisk btn btn-red" data-ng-click=""></button>
         </div>
        </div>
     </div>

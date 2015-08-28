@@ -4,7 +4,13 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{robot.name}}">
+  <ion-header-bar align-title="center" class="logo">
+  <h1 class="title"><img src="img/logo.png" class="small"></h1>
+  <div class="buttons">
+    <a class="button btn-sm btn-reset caps" href="#/tab/warehouse">X</a>
+  </div>
+</ion-header-bar>
+<ion-view view-title="{{robot.name}}"> 
   <ion-content class="pad-20 black">
     <div class="screen-frame">
       <div> 

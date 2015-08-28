@@ -4,13 +4,12 @@ angular.module('starter.controllers', [])
    $scope.robots = Robots.all();	
 })
 
-.controller('FactoryCtrl', function($scope, $ionicScrollDelegate, $timeout, $localStorage, Robots) {
+.controller('FactoryCtrl',function($scope, $ionicScrollDelegate, $timeout, $localStorage, $location, Robots) {
 	
-	$scope.message = $localStorage.length;
 	// prevent scrolling on factory screen
 	$timeout(function() {
 	  $ionicScrollDelegate.$getByHandle('mainScroll').getScrollView().options.scrollingY = false
-      }, 1000);
+    }, 1000);
 	
 	$scope.destroyRobot = function(robot) {
 		$scope.state.factoryEmpty = true;
@@ -35,11 +34,6 @@ angular.module('starter.controllers', [])
 		$scope.state.robotSaved = true;
 		$scope.state.message = $scope.robot.name + ' ' +  $scope.robot.generation + ' ' + 'saved!';
 		$localStorage = Robots.all(robot);
-		console.log($localStorage);
-	}
-	
-	$scope.loadRobot = function() {
-		$scope.message;
 	}
 	
 	$scope.factory = {
@@ -215,7 +209,7 @@ angular.module('starter.controllers', [])
   // end star field
 })
 
-.controller('WarehouseCtrl', function($scope, Robots) {
+.controller('WarehouseCtrl', function($scope, $location, Robots) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -229,6 +223,11 @@ angular.module('starter.controllers', [])
   $scope.remove = function(robot) {
     Robots.remove(robot);
   };
+  
+  $scope.go = function(path) {
+		$location.path(path);
+		console.log($location);
+  }
 })
 
 .controller('RobotDetailCtrl', function($scope, $stateParams, Robots) {
@@ -243,7 +242,7 @@ angular.module('starter.controllers', [])
 		context.fillRect(x, y, 1, 1);
 })
 
-.controller('LabCtrl', function($scope) {
+.controller('LabCtrl', function($scope, $location) {
   $scope.settings = {
     theme: false
   };
@@ -259,5 +258,10 @@ angular.module('starter.controllers', [])
             	elements[i].style.backgroundImage='url("img/cabinet-wood.jpg")';
         	}
 	  }
+  }
+  
+  $scope.go = function(path) {
+		$location.path(path);
+		console.log(path);
   }
 });
