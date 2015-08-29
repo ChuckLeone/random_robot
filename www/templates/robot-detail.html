@@ -16,53 +16,51 @@
       <div> 
        <canvas class="canvas_canvas" id="detail"></canvas> 
        </div>
-        
      </div>
-     <div class="float-left w-40p">
-           <table>
-             <tbody>
-               <caption class="terminal fnt-terminal caps" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Info</caption>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Name: </td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.name}}</td>
-               </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">ID: </td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.id}}</td>
+     <div class="mar-tb20">
+     
+      <div class="game-controls">
+            <table class="fnt-s fnt-white caps w-100p">
+              <tbody>
+                <caption>{{robot.name}}</caption>
+                
+                <tr>
+                  <td>ID: </td>
+                  <td>{{robot.id}}</td>
+                  </tr>
+                <tr>
+                  <td>Generation:</td>
+                  <td>{{robot.generation}}</td>
+                  </tr>
+                <tr>
+                  <td>Color:</td>
+                  <td>{{robot.color}}</td>
+                  </tr>    
+                  <tr>
+                    <td colspan="2" class="text-center">
+                    Stats  
+                    </td>   
+                 <tr>
+                  <td>Speed: </td>
+                  <td>{{robot.speed}}</td>
                 </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Gen:</td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.generation}}</td>
-                </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Color:</td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.color}}</td>
-                </tr>             
-             </tbody>
-           </table>
-           </div>
-           <div class="float-right w-40p">
-             <table>
-             <tbody>
-               <caption class="terminal fnt-terminal caps" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Stats</caption>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Speed: </td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.speed}}</td>
-               </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Power: </td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.speed}}</td>
-                </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Power:</td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.power}}</td>
-                </tr>
-               <tr>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">Armor:</td>
-                <td class="terminal fnt-terminal w-50p" ng-class="{'fnt-deactivate' : state.factoryEmpty }">{{robot.power}}</td>
-                </tr>             
-             </tbody>
-           </table>
-         </div>
+                <tr>
+                  <td>Power: </td>
+                  <td>{{robot.speed}}</td>
+                  </tr>
+                <tr>
+                  <td>Power:</td>
+                  <td>{{robot.power}}</td>
+                  </tr>
+                <tr>
+                  <td>Armor:</td>
+                  <td>{{robot.power}}</td>
+                  </tr>         
+              </tbody>
+            </table>
+            
+          </div>
+       </div>
+       <div><button class="button btn btn-blue w-100p">Load Robot</button></div>
   </ion-content>
 </ion-view>

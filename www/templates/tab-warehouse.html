@@ -1,13 +1,17 @@
 <ion-header-bar align-title="center" class="logo">
-<h1 class="title pad-5"><img src="img/logo.png" class="small"></h1>
-<div class="buttons">
-    <a class="button btn-sm btn-reset caps" href="#/tab/factory">X</a>
+  <div class="buttons">
+    <a class="button ion-android-arrow-back btn-load btn-rnd size-30" href="#/tab/factory"></a>
   </div>
+<h1 class="title pad-5"><img src="img/logo.png" class="small"></h1>
 </ion-header-bar>
+
+<!--<ion-header-bar align-title="center" class="bar-subheader fnt-trim">
+  My Robots
+</ion-header-bar>-->
 <ion-view view-title="Warehouse" hide-nav-bar="true">
   <ion-content>
-    <div>
-   
+    <div class="pad-20">
+    <h3>My Robots</h3>
     </div>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="robot in robots" type="item-text-wrap" href="#/tab/robots/{{robot.id}}">
